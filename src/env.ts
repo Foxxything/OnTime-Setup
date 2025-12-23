@@ -12,5 +12,7 @@ export const env = {
   DB_USER: required("DB_USER"),
   DB_PASSWORD: required("DB_PASSWORD"),
   DB_NAME: required("DB_NAME"),
-  DB_CONN_LIMIT: Number(process.env.DB_CONN_LIMIT ?? 5)
+  DB_CONN_LIMIT: Number(process.env.DB_CONN_LIMIT ?? 5),
+  ONTIME_HOST: required("ONTIME_HOST"),
+  ONTIME_PORT: Number(process.env.ONTIME_PORT ?? 4001),
 };

@@ -1,5 +1,6 @@
 import { ApiClient } from "./api/ApiClient";
 import { SceneAssignment, OnTimeRundownService } from "./api/OnTimeService";
+import { env } from "./env";
 
 import {
     ASSIGN_ACTOR_TO_EVENT_QUERY,
@@ -9,7 +10,7 @@ import {
 import { Actors } from "./models/DbModels";
 
 async function main() {
-    const api = new ApiClient("http://192.168.100.163:4001");
+    const api = new ApiClient(`http://${env.ONTIME_HOST}:${env.ONTIME_PORT}`);
     const rundownService = new OnTimeRundownService(api);
 
     const currentRundown = await rundownService.getCurrentRundown();
